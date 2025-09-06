@@ -1,0 +1,13 @@
+name: BossbarHP
+version: '1.0'
+main: ru.deceased16.bossbarHP.BossbarHP
+api-version: '1.21'
+authors:
+  - deceased16
+description: "Displaying the health bar on the boss bar"
+website: https://github.com/deceased16/BossbarHP-Plugin
+commands:
+  bossbarhp:
+    description: Basic plugin settings (toggle bossbar & change language)
+    usage: /bossbarhp | bbhp <toggle | language>
+    aliases: [bbhp]
