@@ -1,3 +1,18 @@
+/*
+ How to add a new language:
+ 1. Create a new MobLocale class, e.g. SpanishLocale.
+ 2. Create a new MessageLocale class, e.g. SpanishMessages.
+ 3. Add constants here:
+      private static final MobLocale SPANISH_LOC = new SpanishLocale();
+      private static final MessageLocale SPANISH_MSG_LOC = new SpanishMessages();
+ 4. Add a method to switch:
+      public static void setSpanish() {
+          mobLocale = SPANISH_LOC;
+          messageLocale = SPANISH_MSG_LOC;
+      }
+ 5. Add a case in the switch inside the HPCommand class
+*/
+
 package ru.deceased16.bossbarHP.locales;
 
 public class LocaleManager {
@@ -5,18 +20,13 @@ public class LocaleManager {
     private static MessageLocale messageLocale = new EnglishMessages();
 
     // ru localization
-    private static final RUSSIAN_LOC = new RussianLocale();
-    private static final RUSSIAN_MSG_LOC = new RussianMessages();
+    private static final MobLocale RUSSIAN_LOC = new RussianLocale();
+    private static final MessageLocale RUSSIAN_MSG_LOC = new RussianMessages();
 
     // en localization
-    private static final ENGLISH_LOC = new EnglishLocale();
-    private static final ENGLISH_MSG_LOC = new EnglishMessages();
+    private static final MobLocale ENGLISH_LOC = new EnglishLocale();
+    private static final MessageLocale ENGLISH_MSG_LOC = new EnglishMessages();
 
-    @SuppressWarnings("unused")
-    public static void setLocale(MobLocale mobLoc, MessageLocale msgLoc) {
-        mobLocale = mobLoc;
-        messageLocale = msgLoc;
-    } // Not used yet - may be used in future updates or removed
 
     public static void setRussian() {
         mobLocale = RUSSIAN_LOC;
@@ -27,14 +37,6 @@ public class LocaleManager {
         mobLocale = ENGLISH_LOC;
         messageLocale = ENGLISH_MSG_LOC;
     }
-
-    // To add a new language, create classes for both mob and message locales,
-    // then add a new static method here similar to the examples above.
-    // Example for Spanish:
-    // public static void setSpanish() {
-    //     mobLocale = new SpanishLocale();
-    //     messageLocale = new SpanishMessages();
-    // }
 
     public static MobLocale getMobLocale() {
         return mobLocale;

@@ -63,12 +63,12 @@ public class HPCommand implements CommandExecutor {
                     LocaleManager.setEnglish();
                     player.sendMessage(LocaleManager.getMessageLocale().getLanguageSet("English"));
                 }
-                // Add new languages here after creating (Language)Locale and (Language)Messages
-                // Example:
-                // case "es" -> {
-                //     LocaleManager.setSpanish();
-                //     player.sendMessage(LocaleManager.getMessageLocale().getLanguageSet("Español"));
-                // }
+                /* Add new languages here after creating (Language)Locale and (Language)Messages
+                 Example:
+                 case "es" -> {
+                     LocaleManager.setSpanish();
+                     player.sendMessage(LocaleManager.getMessageLocale().getLanguageSet("Español"));
+                 } */
 
                 default -> player.sendMessage(LocaleManager.getMessageLocale().getUnknownLanguage());
             }
