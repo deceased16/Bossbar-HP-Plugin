@@ -4,6 +4,14 @@ public class LocaleManager {
     private static MobLocale mobLocale = new EnglishLocale();
     private static MessageLocale messageLocale = new EnglishMessages();
 
+    // ru localization
+    private static final RUSSIAN_LOC = new RussianLocale();
+    private static final RUSSIAN_MSG_LOC = new RussianMessages();
+
+    // en localization
+    private static final ENGLISH_LOC = new EnglishLocale();
+    private static final ENGLISH_MSG_LOC = new EnglishMessages();
+
     @SuppressWarnings("unused")
     public static void setLocale(MobLocale mobLoc, MessageLocale msgLoc) {
         mobLocale = mobLoc;
@@ -11,13 +19,13 @@ public class LocaleManager {
     } // Not used yet - may be used in future updates or removed
 
     public static void setRussian() {
-        mobLocale = new RussianLocale();
-        messageLocale = new RussianMessages();
+        mobLocale = RUSSIAN_LOC;
+        messageLocale = RUSSIAN_MSG_LOC;
     }
 
     public static void setEnglish() {
-        mobLocale = new EnglishLocale();
-        messageLocale = new EnglishMessages();
+        mobLocale = ENGLISH_LOC;
+        messageLocale = ENGLISH_MSG_LOC;
     }
 
     // To add a new language, create classes for both mob and message locales,
@@ -36,3 +44,4 @@ public class LocaleManager {
         return messageLocale;
     }
 }
+
